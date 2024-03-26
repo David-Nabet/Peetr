@@ -68,9 +68,12 @@
               <li><a href="#expert-travaux">Expert travaux</a></li>
               <li><a href="#footer">Contact</a></li>
               <li><a href="#"><i class="fa-solid fa-user"></i></a></li> 
-               {% if is_granted("ROLE_USER") and not is_granted("ROLE_ADMIN")  %}
+              {# {% if is_granted("ROLE_USER") and not is_granted("ROLE_ADMIN")  %}
                                 <li>
                                     <a class="petit1" {{ app.user.email }}</a>
+                                </li> 
+                                <li>
+                                    <a class="petit1" href="{{ path('cart') }}">Pannier</a>
                                 </li>
                                 <li>
                                     <a class="petit1" href="{{ path('app_espace1') }}">Mon compte</a>
@@ -83,6 +86,9 @@
                             {% if is_granted("ROLE_ADMIN") %}
                                 <li>
                                     <a class="petit1" {{ app.user.email }}</a>
+                                </li>
+                                <li>
+                                    <a class="petit1" href="{{ path('cart') }}">Pannier</a>
                                 </li>
                                 <li>        
                                     <a class="petit1" href="{{ path ('admin') }}">Admin</a></li>
@@ -99,12 +105,15 @@
                                     <li>
                                         <a class="petit1" href="{{ path ('app_login') }}">Connexion</a> 
                                     </li>
-                            {% endif %} 
+                            {% endif %} #}
             </ul>
           </div>
         </nav>
+        <section>
+            <p> RECUPERATION DES DONNEES POUR ARTISANS</p>
+        </section>
+  {% include 'includes/footer.html.twig' %}
 
-  
     {% block body %}{% endblock %}
 </body>
 </html>

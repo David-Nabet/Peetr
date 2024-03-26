@@ -1,3 +1,250 @@
-body {
-    background-color: skyblue;
+*,*::after,*::before{
+  box-sizing:border-box;
 }
+
+body {
+    padding:0;
+    font-size: 1rem;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  
+  
+  .navigation {
+    background-color: rgb(14, 0, 54) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px; 
+  }
+
+  .navbar1 {
+    padding: 0px; /* Espacement interne */
+    display:flex;
+    justify-content: end;
+  }
+  
+  /* Style du logo */
+  .logo {
+    margin-right: 300px; /* Espacement à droite du logo */
+  }
+  
+  /* Style des éléments de la liste de navigation */
+  .Listenav li {
+    list-style: none; /* Supprimer les puces */
+    display: inline-block; /* Afficher en ligne */
+    justify-content: center;
+    margin-right: 17px; /* Espacement entre les éléments */
+  }
+  
+  /* Style des liens de la liste de navigation */
+  .Listenav li a {
+    text-decoration: none; /* Supprimer les soulignements */
+    color:#0275d8;
+    font-size: 16px solid !important;
+  }
+  .Listenav li a:hover {
+    color:#1d3557; /* Couleur au survol */
+  }
+  
+  /* Style du bouton de demande de devis */
+  .devis {
+    margin-left: 20px; /* Espacement à gauche du bouton */
+  }
+
+
+  .cote1 {
+    margin-right: auto; 
+  }
+  .cote2 {
+    margin-right: 10px; 
+  }
+
+  .devis  {
+    display: flex;
+    margin-right: 200px;
+  }
+  
+  
+  /Partie sur les cards/
+  .bandeblanche {
+    height: 300px;
+    width: 100px;
+    color: #0275d8;
+  }
+  /Partie sur les cards/
+    .card {
+      box-shadow: 0 0 10px#1d3557; 
+      transition: box-shadow 0.3s ease;
+    }
+    /*.card:hover {
+      box-shadow: 0 0 18px  #fdbe33;
+    }*/
+  
+  
+    .btn-savoir {
+      background-color: #fdbe33!important; 
+      font-style: #fff; 
+    }
+    .btn-savoir:hover {
+      background-color: #0275d8!important; 
+      color: #fff;
+    }
+    .flaticon{
+      color: #fdbe33;
+      font-size: 24px !important;
+      background-color: white !important;
+    }
+  
+  /******** Carousel CSS *********/
+  /*******************************/
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 170px);
+    min-height: 400px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .carousel .carousel-inner,
+  .carousel .carousel-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel .carousel-item::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .3);
+    z-index: 1;
+  }
+  
+  .carousel .carousel-caption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 170px);
+    min-height: 400px;
+  }
+  
+  .carousel .carousel-caption p {
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .carousel .carousel-caption h1 {
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 35px;
+  }
+  
+  .carousel .carousel-caption .btn {
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 0;
+    transition: .3s;
+  }
+  
+  .carousel .carousel-caption .btn:hover {
+    color:#1d3557;
+    background: #fdbe33;
+    border-color: #fdbe33;
+  }
+  
+  @media (max-width: 767.98px) {
+    .carousel .carousel-caption h1 {
+        font-size: 40px;
+        font-weight: 700;
+    }
+    
+    .carousel .carousel-caption p {
+        font-size: 20px;
+    }
+    
+    .carousel .carousel-caption .btn {
+        padding: 12px 30px;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0;
+    }
+  }
+  
+  @media (max-width: 575.98px) {
+    .carousel .carousel-caption h1 {
+        font-size: 30px;
+        font-weight: 500;
+    }
+    
+    .carousel .carousel-caption p {
+        font-size: 16px;
+    }
+    
+    .carousel .carousel-caption .btn {
+        padding: 10px 25px;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0;
+    }
+  }
+  
+  .carousel .animated {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+  }
+  
+  .footercolor {
+    background-color: #1d3557; 
+    color: white !important;
+  }
+  
+  .social {
+    text: white !important;
+  }
+  
+  /*******************************/
+  
+  .titre {
+    font-size: 40px; /* Taille du titre */
+  }
+  .soustitre {
+    font-size: 25px; /* Taille du titre */
+  }
+  
+  .iconbox {
+    font-size: 50px;
+    color: #fdbe33;
+  }
+  .footercolor { 
+    background-color:rgb(14, 0, 54)
+  }
+  
+  .logofooter {
+    display: flex;
+    justify-content: center;
+    height: 30% ;
+  }

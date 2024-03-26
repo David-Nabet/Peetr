@@ -1,0 +1,14 @@
+<section class="3box container-fluid py-5 py-lg-5 feature">
+  <div class="row py-5 py-lg-0">
+    {% for post in Bandesolution %}
+        <div class="col-lg-4 p-0">
+        <div class="features-item d-flex align-items-center border-right px-5 mb-4 mb-lg-0">
+            <div class="xx">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <p class="card-text flex-grow-1">{{ post.subtitle }}</p>
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+  </div>
+</section>

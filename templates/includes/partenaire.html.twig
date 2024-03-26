@@ -1,0 +1,9 @@
+<section style="">
+    <div class="row">
+        {% for post in Partenaire %}
+            <div class="col-md-4 text-center mt-5">
+                <img class="img-fluid" src="{{ asset('upload/' ~ post.image) }}" alt="{{ post.image }} " style="width: 50px; ">
+            </div>
+        {% endfor %}
+    </div>
+</section> 
