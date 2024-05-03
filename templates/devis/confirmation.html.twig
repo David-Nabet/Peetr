@@ -1,0 +1,21 @@
+{# templates/devi/confirmation.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h1 class="card-title mt-5">Votre devis à été soumis avec succès</h1>
+                        <p class="card-text lead">Notre équipe de Peetr va vous contacter dans un jour ouvrable.</p>
+                        <img src="{{ asset('upload/check.png') }}" alt="Check Mark" class="card-img-top img-fluid mt-4" style="max-width: 150px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

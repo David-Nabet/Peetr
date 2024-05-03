@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\CardRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CardRepository::class)]
@@ -27,6 +28,13 @@ class Card
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $information = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image2 = null;
+
 
     public function getId(): ?int
     {
@@ -92,4 +100,31 @@ class Card
 
         return $this;
     }
+
+    public function getInformation(): ?string
+    {
+        return $this->information;
+    }
+
+    public function setInformation(?string $information): static
+    {
+        $this->information = $information;
+
+        return $this;
+    }
+
+    public function getImage2(): ?string
+    {
+        return $this->image2;
+    }
+
+    public function setImage2(?string $image2): static
+    {
+        $this->image2 = $image2;
+
+        return $this;
+    }
+
+  
+
 }

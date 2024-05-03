@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SolutionController!{% endblock %}
+
+{% block body %}
+    <div class="container-xxl py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-secondary text-uppercase">Nos solutions</h6>
+                <h1 class="mb-5">Explorez toutes nos solutions</h1>
+            </div>
+            <div class="row g-4">
+                {% for service in service %} 
+                    <div class="col-md-6 col-lg-3 p-0 wow fadeInUp card" data-wow-delay="0.3s">
+                        <div class="service-item p-0 card-body">
+                            <div class="overflow-hidden mb-4 p-0">
+                                <img src="{{ asset('upload/' ~ service.image) }}" alt="{{ service.image }}" class="card-img-top img-fluid" style="width: 100%; height: 200px;">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="mb-3">{{ service.service }}</h4>
+                                <p>{{ service.description | raw }}</p>
+                                <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Plus d'info</span></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% include 'includes/footer.html.twig' %}
+
+{% endblock %}
+

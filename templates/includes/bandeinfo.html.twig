@@ -1,10 +1,11 @@
 <!-- Création de la petite banderolle-->
 {% for post in Bandeinfo %}
-<div class="container-fluid bg-light">
-  <div class="banderolle d-flex flex-wrap justify-content-center mt-5 "></div>
-    <div class="text-uppercase text-center py-5">
-      <h2 class="titre">{{ post.title }}</p>
-      <p class="soustitre">{{ post.subtitle }}</p>
-  </div> 
-</div>
+  <div class="bandeinfo container-fluid bg-light">
+    <div class="banderolle d-flex flex-wrap justify-content-center mt-5">
+      <div class="text-uppercase text-center py-5 ">
+        <h2 class="titre mt-5">{{ post.title }}</h2>
+        <p class="soustitre mt-5">{{ post.subtitle }}</p>
+      </div>
+    </div>
+  </div>
 {% endfor %}

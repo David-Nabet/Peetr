@@ -22,8 +22,7 @@ class Carousel
     #[ORM\Column(length: 255)]
     private ?string $subtitle = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $button = null;
+  
 
     public function getId(): ?int
     {
@@ -66,15 +65,6 @@ class Carousel
         return $this;
     }
 
-    public function getButton(): ?string
-    {
-        return $this->button;
-    }
 
-    public function setButton(?string $button): static
-    {
-        $this->button = $button;
-
-        return $this;
-    }
+ 
 }

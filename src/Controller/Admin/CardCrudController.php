@@ -21,9 +21,14 @@ class CardCrudController extends AbstractCrudController
     {
         return [
             TextField::new('icon', 'Icone date de publication'),
+            TextEditorField::new('information','Information complementaire'),
             TextField::new('title'),
             TextField::new('subtitle'),
             ImageField::new('image', 'Image')
+            ->setBasePath('upload/')
+            ->setUploadDir('public/upload')
+            ->setUploadedFileNamePattern('[randomhash].[extension]'),
+            ImageField::new('image2', 'Image du show')
             ->setBasePath('upload/')
             ->setUploadDir('public/upload')
             ->setUploadedFileNamePattern('[randomhash].[extension]'),

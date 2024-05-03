@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Détails de l'article {% endblock %}  
+
+{% block body %}
+<div class="container mt-5 p-lg-5">
+    <div class="container text-start">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('upload/' ~ showSolutions.image2) }}" alt="{{ showSolutions.image2 }}">
+                    <div class="card-body">
+                        <h1>{{ showSolutions.title }}</h1>
+                        <p>{{ showSolutions.subtitle }}</p>
+                        <h2>{{ showSolutions.information | raw }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('upload/' ~ showSolutions.image) }}" alt="{{ showSolutions.image }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

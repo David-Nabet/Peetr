@@ -45,3 +45,22 @@ CREATE TABLE `partenaire` (
   `image` varchar(255) NOT NULL,
 );
 
+
+CREATE TABLE `service` (
+  `id` int NOT NULL,
+  `image` varchar(255)  NULL,
+  `title` varchar(255)  NULL,
+  `description` varchar(255) NULL,
+  
+);
+
+CREATE TABLE `devis` (
+  `id` int NOT NULL,
+  `lastname` varchar(255)  NULL,
+  `name` varchar(255)  NULL,
+  `telephone` varchar(255)  NULL,
+  `budget` varchar(255)  NULL,
+  `text` longtext NULL,
+  `city` varchar(255) NULL,
+  
+);

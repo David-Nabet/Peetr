@@ -28,7 +28,6 @@
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
-    </head>
     <body>
         <div class="navigation" style="color: white;">
             <div class="cote1">Horaires d'ouvertures: 8h00 - 21h00</div>
@@ -39,72 +38,49 @@
             <div class="cote2"><i class="fa-brands fa-instagram"></i></div>
             <div class="cote2"><i class="fa-brands fa-youtube"></i></div>
         </div>
-        
-          {# <nav class="navbar">  
-            <a href="/accueil"><img src="/upload/logo2.webp" width="120px" class="logo" alt:"..." ></a>
-              <ul class="Listenav text-align center">
-                <li><a href="#cards"><b>Solutions</b></a></li>             
-                <li><a href="#interventions">Interventions</a></li>            
-                <li><a href="#cas-usages">Cas d'usages</a></li>
-                <li><a href="#expert-travaux">Espace client</a></li>
-                <li><a href="#expert-travaux">Expert travaux</a></li>
-                <li><a href="#footer">Contact</a></li>
-                <li><a href="#"><i class="fa-solid fa-user"></i></a></li> 
-                <a href="/demande-de-devis" class="devis btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Demande de devis</a>
-              </ul>
-          </nav>  #}
   
-        <nav class="navbar1 navbar-expand-lg navbar-light">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>        
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="Listenav text-align center m-auto">
-              <a href="/accueil"><img src="upload/logo2.webp" width="150px" class="logo" alt:"..."></a>
-              <li><a href="#cards"><b>Solutions</b></a></li>             
-              <li><a href="#interventions">Interventions</a></li>            
-              <li><a href="#cas-usages">Cas d'usages</a></li>
-              <li><a href="#expert-travaux">Espace client</a></li>
-              <li><a href="#expert-travaux">Expert travaux</a></li>
-              <li><a href="#footer">Contact</a></li>
-              <li><a href="#"><i class="fa-solid fa-user"></i></a></li> 
-               {% if is_granted("ROLE_USER") and not is_granted("ROLE_ADMIN")  %}
-                                <li>
-                                    <a class="petit1" {{ app.user.email }}</a>
-                                </li>
-                                <li>
-                                    <a class="petit1" href="{{ path('app_espace1') }}">Mon compte</a>
-                                </li>
-                                <li>
-                                    <a class="petit1" href="{{ path('app_logout') }}">Déconnexion</a>
-                                </li>
-                            {% endif %}
+   <nav class="navbar1 navbar-expand-lg navbar-light">
+    <a href="/"><img src="upload/Peetrupdate3.png" width="300px" class="logo" alt="Logo du site"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="Listenav text-align center mx-auto mt-3">
+            <li><a class="petit1 d-flex flex-column align-items-center" href="{{ path('app_solution')}}"><b>Solutions</b></a></li>
+            <li><a class="petit1 d-flex flex-column align-items-center" href="{{ path('app_intervention')}}">Interventions</a></li>
+            {% if not is_granted("ROLE_USER") and not is_granted("ROLE_ADMIN")  %}
+            <li><a class="petit1 d-flex flex-column align-items-center" href="{{ path('app_inscription') }}">S'inscrire</a></li>
+            {% endif %}
+            <li><a class="btn btn-savoir2 align-self-center petit1 d-flex flex-column align-items-center" href="{{ path('app_devis')}}" role="button">Demande de devis</a></li>
+            {% if is_granted("ROLE_USER") and not is_granted("ROLE_ADMIN")  %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{ app.user.email }}</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{ path('app_espace1') }}">Paramètre</a></li>
+                    <li><a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a></li>
+                </ul>
+            </li>
+            {% endif %}
 
-                            {% if is_granted("ROLE_ADMIN") %}
-                                <li>
-                                    <a class="petit1" {{ app.user.email }}</a>
-                                </li>
-                                <li>        
-                                    <a class="petit1" href="{{ path ('admin') }}">Admin</a></li>
-                                </li>
-                                <li>
-                                    <a class="petit1" href="{{ path('app_espace1') }}">Mon compte</a>
-                                </li>
-                                <li>
-                                    <a class="petit1" href="{{ path ('app_logout') }}">Deconnexion</a>
-                                </li>
-                            {% endif %}
+            {% if is_granted("ROLE_ADMIN") %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{ app.user.email }}</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{ path('admin') }}">Admin</a></li>
+                    <li><a class="dropdown-item" href="{{ path('app_espace1') }}">Paramètre</a></li>
+                    <li><a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a></li>
+                </ul>
+            </li>
+            {% endif %}
 
-                            {% if not is_granted("ROLE_USER") and not is_granted("ROLE_ADMIN")  %}
-                                    <li>
-                                        <a class="petit1" href="{{ path ('app_login') }}">Connexion</a> 
-                                    </li>
-                            {% endif %} 
-            </ul>
-          </div>
-        </nav>
+            {% if not is_granted("ROLE_USER") and not is_granted("ROLE_ADMIN")  %}
+            <li> <a class="petit1 d-flex flex-column align-items-center" href="{{ path ('app_login') }}">Connexion</a> </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
 
-  
+
     {% block body %}{% endblock %}
 </body>
 </html>

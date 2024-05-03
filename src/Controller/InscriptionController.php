@@ -4,11 +4,11 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\InscriptionType;
 use Doctrine\ORM\EntityManagerInterface;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class InscriptionController extends AbstractController
 {
@@ -20,10 +20,13 @@ class InscriptionController extends AbstractController
     }
     #[Route('/inscription', name: 'app_inscription')]
     public function index(Request $request): Response
-    {
+    {   
+        if ($this -> getUser())
+        {
+            return $this -> redirectToRoute('app_home');
+        }
         $user = new User(); // Création d'un nouvel utilisateur
         $form = $this->createForm(InscriptionType::class, $user); // Création du formulaire d'inscription
-
         $form->handleRequest($request); // Gestion de la requête
 
         if ($form->isSubmitted() && $form->isValid()) { //Verification de la soumission du formulaire et de sa validité
@@ -31,6 +34,8 @@ class InscriptionController extends AbstractController
             $user = $form->getData();//Stockage de données du formulaire en mémoire dans l'object $user
             // On vérifie l'existence de l'adresse e-mail de l'utilisateur
             $userExist = $this->em->getRepository(User::class)->findOneBy(['email' => $user->getEmail()]);
+            
+            
             
             if (!$userExist) {
                 // Hashage du mot de passe
@@ -41,10 +46,10 @@ class InscriptionController extends AbstractController
                 // Enregistrement de l'utilisateur dans la base de données
                 $this->em->persist($user); // Permet de préparer une requête SQL
                 $this->em->flush(); // Exécute la requête SQL
-
-                $this->addFlash('success', 'Votre compte a été créé avec succès !');
+                // $this->addFlash('success', 'Votre compte a été créé avec succès !');
 
                 return $this->redirectToRoute('app_login');
+
             } else {
                 $this->addFlash('error', 'Cette adresse e-mail est déjà utilisée !');
             }
@@ -53,7 +58,10 @@ class InscriptionController extends AbstractController
 
         return $this->render('inscription/index.html.twig', [
             'form' => $form->createView(),//Création de la vue du formulaire
+            
         ]);
     }
+     
+
 }
 

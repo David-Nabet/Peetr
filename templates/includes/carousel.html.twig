@@ -1,4 +1,4 @@
-<header>
+
     <!-- Creation du carousel -->
     <div id="carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -6,14 +6,15 @@
             <li data-target="#carousel" data-slide-to="1"></li>
             <li data-target="#carousel" data-slide-to="2"></li>
         </ol>
+         <div class="container-fluid overflow-hidden py-5 px-lg-0  bg-light"></div>
         <div class="carousel-inner">
             {% for post in Carousel %}
-                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                <div class="carousel-item image-fluid {% if loop.first %}active{% endif %}">
                     <img src="{{ asset('upload/' ~ post.image) }}" alt="{{ post.image }}">
                     <div class="carousel-caption">
                         <p class="animated fadeInRight">{{ post.title }}</p>
                         <h2 class="animated fadeInLeft">{{ post.subtitle }}</h1>
-                        <a class="btn animated fadeInUp" href="#">Devis gratuit</a>
+                        <a class=" btn animated fadeInUp" href="{{ path('app_devis')}}">Devis gratuit</a>
                     </div>
                 </div>
             {% endfor %}
@@ -27,4 +28,3 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-</header>

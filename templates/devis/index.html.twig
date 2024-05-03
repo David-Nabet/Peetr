@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis{% endblock %}
+
+{% block body %}
+
+{# templates/devi/index.html.twig #}
+
+<div class="container">
+    <h1 class="text-center">Formulaire de devis</h1>
+    <div class="col-6 mx-auto">
+        {{ form_start(form) }}
+            <div class="form-group">
+               {{ form_label(form.nom) }}  
+               {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }} 
+               {{ form_errors(form.nom) }}  
+            </div>
+            <div class="form-group">
+               {{ form_label(form.prenom) }}  
+               {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }} 
+               {{ form_errors(form.prenom) }}  
+            </div>
+             <div class="form-group">
+               {{ form_label(form.email) }}  
+               {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }} 
+               {{ form_errors(form.email) }}  
+            </div>
+            <div class="form-group">
+               {{ form_label(form.telephone) }}  
+               {{ form_widget(form.telephone, {'attr': {'class': 'form-control'}}) }} 
+               {{ form_errors(form.telephone) }}  
+            </div>
+            <div class="form-group">
+               {{ form_label(form.budget) }}  
+               {{ form_widget(form.budget, {'attr': {'class': 'form-control'}}) }} 
+               {{ form_errors(form.budget) }}  
+            </div>
+              <div class="form-group">
+               {{ form_label(form.demande) }}  
+               {{ form_widget(form.demande, {'attr': {'class': 'form-control'}}) }} 
+               {{ form_errors(form.demande) }}  
+            </div>
+            <div class="form-group">
+               {{ form_label(form.ville) }}  
+               {{ form_widget(form.ville, {'attr': {'class': 'form-control'}}) }} 
+               {{ form_errors(form.ville) }}  
+            </div>
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}

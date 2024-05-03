@@ -8,7 +8,6 @@ body {
     font-family:Arial, Helvetica, sans-serif;
   }
   
-  
   .navigation {
     background-color: rgb(14, 0, 54) ;
     display: flex;
@@ -16,24 +15,33 @@ body {
     align-items: center;
     padding: 6px; 
   }
-
+  
+  .bandeinfo {
+    height: 350px;
+  }
   .navbar1 {
     padding: 0px; /* Espacement interne */
     display:flex;
     justify-content: end;
+    background-color:rgb(255, 255, 255);
   }
+  /* Partie solutions */
+  
   
   /* Style du logo */
   .logo {
-    margin-right: 300px; /* Espacement à droite du logo */
-  }
-  
+    margin-right: 500px; /* Espacement à droite du logo */
+    
+  }  
+
+
   /* Style des éléments de la liste de navigation */
   .Listenav li {
     list-style: none; /* Supprimer les puces */
     display: inline-block; /* Afficher en ligne */
     justify-content: center;
     margin-right: 17px; /* Espacement entre les éléments */
+    font-size: 18px;
   }
   
   /* Style des liens de la liste de navigation */
@@ -64,7 +72,7 @@ body {
     margin-right: 200px;
   }
   
-  
+
   /Partie sur les cards/
   .bandeblanche {
     height: 300px;
@@ -89,14 +97,24 @@ body {
       background-color: #0275d8!important; 
       color: #fff;
     }
+
+    .btn-savoir2 {
+      background-color: #0275d8!important;
+      color: #fff !important; /* Cette ligne rendra le texte blanc */
+    }
+    .btn-savoir2:hover {
+      background-color:  #fdbe33!important; 
+      text: #fff;
+    }
+
+    
     .flaticon{
       color: #fdbe33;
       font-size: 24px !important;
       background-color: white !important;
     }
+ 
   
-  /******** Carousel CSS *********/
-  /*******************************/
   .carousel {
     position: relative;
     width: 100%;
@@ -213,32 +231,20 @@ body {
   }
   
   .carousel .animated {
-    -webkit-animation-duration: 1.5s;
-    animation-duration: 1.5s;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
   }
   
-  .footercolor {
-    background-color: #1d3557; 
-    color: white !important;
-  }
+   ******************************
+   /*Partie Footer */
+   
+ 
   
   .social {
     text: white !important;
+    
   }
   
-  /*******************************/
-  
-  .titre {
-    font-size: 40px; /* Taille du titre */
-  }
-  .soustitre {
-    font-size: 25px; /* Taille du titre */
-  }
-  
-  .iconbox {
-    font-size: 50px;
-    color: #fdbe33;
-  }
   .footercolor { 
     background-color:rgb(14, 0, 54)
   }
@@ -248,3 +254,141 @@ body {
     justify-content: center;
     height: 30% ;
   }
+  /*******************************/
+ 
+  
+  .titre {
+    font-size: 40px; 
+  }
+  .soustitre {
+    font-size: 25px;
+  }
+  
+  .iconbox {
+    font-size: 50px;
+    color: #fdbe33;
+  }
+
+  .BienvenueClass {
+    font-size: 60px;
+    color:#1d3557;
+  }
+
+  *************************************
+  .service-item,
+.price-item,
+.team-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.service-item img,
+.team-item img {
+    transition: .5s;
+}
+
+.service-item:hover img,
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+.service-item a.btn-slide,
+.price-item a.btn-slide,
+.team-item div.btn-slide {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.service-item a.btn-slide i,
+.service-item a.btn-slide span,
+.price-item a.btn-slide i,
+.price-item a.btn-slide span,
+.team-item div.btn-slide i,
+.team-item div.btn-slide span {
+    position: relative;
+    height: 40px;
+    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: var(--primary);
+    border-radius: 0 35px 35px 0;
+    transition: .5s;
+    z-index: 2;
+}
+
+.team-item div.btn-slide span a i {
+    padding: 0 10px;
+}
+
+.team-item div.btn-slide span a:hover i {
+    background: var(--secondary);
+}
+
+.service-item a.btn-slide span,
+.price-item a.btn-slide span,
+.team-item div.btn-slide span {
+    padding-left: 0;
+    left: -100%;
+    z-index: 1;
+}
+
+.service-item:hover a.btn-slide i,
+.price-item:hover a.btn-slide i,
+.team-item:hover div.btn-slide i {
+    border-radius: 0;
+}
+
+.service-item:hover a.btn-slide span,
+.price-item:hover a.btn-slide span,
+.team-item:hover div.btn-slide span {
+    left: 0;
+}
+
+.service-item a.btn-slide:hover i,
+.service-item a.btn-slide:hover span,
+.price-item a.btn-slide:hover i,
+.price-item a.btn-slide:hover span {
+    background: var(--secondary);
+}
+********************
+/*Partie intervention*/
+@media (min-width: 992px) {
+  .container.feature {
+      max-width: 100% !important;
+  }
+
+  .feature-text  {
+      padding-left: calc(((100% - 960px) / 2) + .75rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .feature-text  {
+      padding-left: calc(((100% - 1140px) / 2) + .75rem);
+  }
+}
+
+@media (min-width: 1400px) {
+  .feature-text  {
+      padding-left: calc(((100% - 1320px) / 2) + .75rem);
+  }
+}
+
+********************************
+/* Code pour la navbarre en bouton */
+@media (max-width: 767px) {
+  .Listenav {
+      display: none;
+  }
+
+  .navbar-toggler {
+      display: block;
+  }
+
+  .collapse.show {
+      display: block;
+  }
+}
